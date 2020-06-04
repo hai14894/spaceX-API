@@ -9,3 +9,7 @@ axios.get(`${specifyUrl}`)
         console.log("The launch failed");
     }
 })
+.catch(err =>{
+    err = "There is no such lauch"
+    console.log(err);
+})
