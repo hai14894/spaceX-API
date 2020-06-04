@@ -1,7 +1,6 @@
 let flight_number = prompt("what flight number you are looking for?")
-let spaceXUrl = "https://api.spacexdata.com/v3/launches/"
-let specifyUrl = new URL(flight_number, spaceXUrl)
-axios.get(`${specifyUrl}`)
+let spaceXUrl = `https://api.spacexdata.com/v3/launches/${flight_number}`
+axios.get(`${spaceXUrl}`)
 .then(launch =>{
     if(launch.data.launch_success){
         console.log("The launch succeed")
@@ -13,3 +12,5 @@ axios.get(`${specifyUrl}`)
     err = "There is no such lauch"
     console.log(err);
 })
+
+
